@@ -56,7 +56,7 @@ def export_data():
 	for x in puid_type_list:
 		puid_type_url = base_url + x + '/'
 		current_dir = os.getcwd()
-		new_dir = os.getcwd() + '//pronom_export//' + x + '//'
+		new_dir = os.getcwd() + '//' + config.get('locations', 'export') + '//' + x + '//'
 		
 		try:
 			os.makedirs(new_dir)
