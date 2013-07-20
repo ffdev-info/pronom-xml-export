@@ -42,7 +42,11 @@ def export_data():
 			filename = puid_type + str(i) + '.xml'
 			puid_url = puid_type_url + str(i) + '.xml'
 			
-			url = urllib2.urlopen(puid_url)
+			request = urllib2.Request(puid_url)
+			opener = urllib2.build_opener()
+			
+			request.add_header('User-Agent', 'exponentialDK-PRONOM-Export/0.0.0')
+			url = opener.open(request)
 			
 			test_string = url.read(14)
 			
