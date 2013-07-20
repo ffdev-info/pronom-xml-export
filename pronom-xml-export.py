@@ -11,7 +11,9 @@ config.read('pronom-xml-export.cfg')
 puid_dict = {}
 
 for type in puid_type_list:
-	puid_dict[type] = config.getint('puids', type)
+	tmpint = config.getint('puids', type)
+	if tmpint > 0:
+		puid_dict[type] = tmpint
 
 error_string=config.get('doctypes', 'error-string')
 good_string=config.get('doctypes', 'good-string')
@@ -20,7 +22,7 @@ good_string=config.get('doctypes', 'good-string')
 base_url=config.get('urls', 'base-url')
 
 def export_data():
-	for puid_type in puid_type_list:
+	for puid_type in puid_dict.keys():
 		puid_type_url = base_url + puid_type + '/'
 		current_dir = os.getcwd()
 		new_dir = os.getcwd() + '//' + config.get('locations', 'export') + '//' + puid_type + '//'
