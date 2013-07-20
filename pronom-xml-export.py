@@ -13,12 +13,11 @@ puid_dict = {}
 for type in puid_type_list:
 	puid_dict[type] = config.getint('puids', type)
 
-# BOF strings we expect to see under normal and error conditions
-error_string = '<!DOCTYPE html'
-good_string = '<?xml version='
+error_string=config.get('doctypes', 'error-string')
+good_string=config.get('doctypes', 'good-string')
 
 #url through which to access Pronom data...
-base_url = 'http://www.nationalarchives.gov.uk/PRONOM/'
+base_url=config.get('urls', 'base-url')
 
 def export_data():
 	for puid_type in puid_type_list:
