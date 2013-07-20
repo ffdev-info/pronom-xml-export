@@ -1,4 +1,4 @@
-import urllib
+import urllib2
 import os
 import time
 import ConfigParser
@@ -73,10 +73,13 @@ def export_data():
 			filename = x + str(i) + '.xml'
 			puid_url = puid_type_url + str(i) + '.xml'
 			
-			url = urllib.urlopen(puid_url)
+			url = urllib2.urlopen(puid_url)
+			
 			test_string = url.read(14)
 			if(check_record(test_string)):
-				urllib.urlretrieve(puid_url, filename)
+				f = open(filename, 'wb')
+				f.write(test_string + url.read())
+				f.close()
 
 		#revert back to original directory...
 		os.chdir(current_dir)		
