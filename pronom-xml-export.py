@@ -1,4 +1,3 @@
-# code to export pronom xml
 import urllib2
 import os
 import time
