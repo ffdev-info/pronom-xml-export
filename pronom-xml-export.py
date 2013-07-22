@@ -61,8 +61,6 @@ def export_data():
 
 def check_record(test_string):
 	return_val = 0;
-	
-	#print 'testing ' + test_string
 
 	if test_string == error_string:
 		return_val = 0
