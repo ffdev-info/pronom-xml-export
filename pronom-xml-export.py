@@ -46,6 +46,9 @@ def export_data():
 			opener = urllib2.build_opener()
 			
 			request.add_header('User-Agent', 'exponentialDK-PRONOM-Export/0.0.0')
+			
+			print puid_url
+
 			url = opener.open(request)
 			
 			test_string = url.read(14)
