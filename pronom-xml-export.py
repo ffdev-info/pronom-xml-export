@@ -26,7 +26,7 @@ def export_data():
    proxy = ''
    
    #comment this to remove proxy requirement
-   #proxy = urllib2.ProxyHandler({'http': 'http://********:8080'})
+   proxy = urllib2.ProxyHandler({'http': 'dia\spencero:rsanzs116++@wlgproxy:8080'})
 
    for puid_type in puid_dict.keys():
       puid_type_url = base_url + puid_type + '/'
