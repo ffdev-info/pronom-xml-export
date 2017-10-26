@@ -1,5 +1,4 @@
 # pronom-xml-export
----
 
 Python scripts to export the XML data available by The National Archives, UK, technical
 registry, PRONOM: http://www.nationalarchives.gov.uk/PRONOM/Default.aspx
