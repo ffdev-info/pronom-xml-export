@@ -58,7 +58,7 @@ def download_and_save_puid(puid_filename_pair: tuple) -> None:
     request = requests.get(puid_url, timeout=30, headers=header)
     test_string = request.text[:14]
     if not check_record(test_string):
-        logger.info("not writing record: %s", test_string)
+        logger.info("not writing record: %s (%s)", file_name, test_string)
         return
     with open(file_name, "w", encoding="utf-8") as fmt_record:
         fmt_record.write(request.text)
@@ -97,9 +97,12 @@ def export_pronom_data():
             pool.map(download_and_save_puid, puid_filename_pairs)
 
 
-def check_record(test_string) -> bool:
-    """Ensure that a test_string doesn't equal an error string."""
-    if test_string == xml_string:
+def check_record(ffb: str) -> bool:
+    """Ensure that we're downloading an XML record.
+
+    NB. ffb == "first fourteen bytes"
+    """
+    if ffb == xml_string:
         return True
     return False
 
