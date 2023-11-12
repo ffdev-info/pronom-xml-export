@@ -1,11 +1,18 @@
 # pronom-xml-export
 
-Python scripts to export the XML data available by The National Archives, UK, technical
-registry, PRONOM: http://www.nationalarchives.gov.uk/PRONOM/Default.aspx
+Python scripts to export the XML data available by The National Archives, UK,
+technical registry, [PRONOM][pronom-1].
 
-XML links take the form: http://www.nationalarchives.gov.uk/PRONOM/{puid-type}/{puid-no}.xml
+[pronom-1]: http://www.nationalarchives.gov.uk/PRONOM/Default.aspx
 
-pronom-xml-export is made available as beerware: https://github.com/exponential-decay/pronom-xml-export/blob/master/license.md
+XML links take the form:
 
-**NOTE:** http://www.nationalarchives.gov.uk/PRONOM/sfw/1.xml dereferences to x-sfw/1
-please use the xml file provided in the additional directory 'sfw-1' in this project. 
+```python
+ f"http://www.nationalarchives.gov.uk/PRONOM/{puid_type}/{puid_no}.xml"
+```
+
+## License
+
+pronom-xml-export is made available as [beerware][beerware-1].
+
+[beerware-1]: https://github.com/exponential-decay/pronom-xml-export/blob/master/license.md
